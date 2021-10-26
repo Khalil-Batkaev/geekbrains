@@ -18,7 +18,7 @@ for text in lst_to_edit:
 text = ' '.join(lst_after_edit)
 
 for number in numbers:
-   text = text.replace(f'" {number} "', f'"{number}"')
+    text = text.replace(f'" {number} "', f'"{number}"')
 
 print(lst_to_edit)
 print(lst_after_edit)
@@ -48,7 +48,7 @@ lst_result = lst_result[limit_lst:]
 text_result = ' '.join(lst_result)
 
 for number in numbers_result:
-   text_result = text_result.replace(f'" {number} "', f'"{number}"')
+    text_result = text_result.replace(f'" {number} "', f'"{number}"')
 
 print(lst_result)
 print(text_result)
