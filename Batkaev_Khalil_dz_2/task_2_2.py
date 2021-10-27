@@ -31,20 +31,21 @@ print()
 lst_result = ['примерно в', '23', 'часа', '8', 'минут', '03', 'секунд', 'температура', 'воздуха', 'была', '-5',
               'градусов Цельсия', 'темп', 'воды', '+12', 'градусов', 'Цельсия']
 numbers_result = []
-limit_lst = len(lst_result)
+
 print(lst_result)
 
-for i in range(limit_lst):
+for i in range(len(lst_result) - 1, -1, -1):
     if lst_result[i].isdigit():
-        lst_result.extend(['"', f'{int(lst_result[i]):02d}', '"'])
+        lst_result.insert(i+1, '"')
+        lst_result[i] = f'{int(lst_result[i]):02d}'
         numbers_result.append(f'{int(lst_result[i]):02d}')
+        lst_result.insert(i, '"')
     elif '+' in lst_result[i] or '-' in lst_result[i]:
-        lst_result.extend(['"', f'{int(lst_result[i]):+03d}', '"'])
+        lst_result.insert(i+1, '"')
+        lst_result[i] = f'{int(lst_result[i]):+03d}'
         numbers_result.append(f'{int(lst_result[i]):+03d}')
-    else:
-        lst_result.append(lst_result[i])
+        lst_result.insert(i, '"')
 
-lst_result = lst_result[limit_lst:]
 text_result = ' '.join(lst_result)
 
 for number in numbers_result:
