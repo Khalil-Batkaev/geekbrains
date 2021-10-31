@@ -1,6 +1,5 @@
 def num_translate_adv(number):
     """Gives Russian translation of numbers 0-10"""
-
     num_dict = {
         'zero': 'ноль',
         'one': 'один',
@@ -14,10 +13,12 @@ def num_translate_adv(number):
         'nine': 'девять',
         'ten': 'десять'
     }
-
     if number == number.title():
         print(num_dict.get(number.lower()).title())
     else:
         print(num_dict.get(number.lower()))
 
-num_translate_adv('пять')
+
+num_translate_adv('one')
+num_translate_adv('Two')
+num_translate_adv('eleven')
