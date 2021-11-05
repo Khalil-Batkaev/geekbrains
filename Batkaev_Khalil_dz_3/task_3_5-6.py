@@ -1,11 +1,11 @@
-def get_jokes_adv(n, lst_1, lst_2, lst_3, flag='no'):
+def get_jokes_adv(n, lst_1, lst_2, lst_3, is_unique='no'):
     """
     Gives a random jokes. n is quantity of jokes. lst_1, lst_2, lst_3 are lists with words to jokes.
     If flag is 'yes' jokes will be unique
     """
     from random import choice, sample  # Записал импорт в тело функции, чтобы можно было запускать её в любом месте
     jokes = []
-    if flag == 'no':
+    if is_unique == 'no':
         for _ in range(n):
             joke = ' '.join([choice(lst_1), choice(lst_2), choice(lst_3)])
             jokes.append(joke)
@@ -26,5 +26,5 @@ adjectives = ['веселый', 'яркий', 'зеленый', 'утопичн�
 
 get_jokes_adv(4, nouns, lst_3=adjectives, lst_2=adverbs)
 get_jokes_adv(6, nouns, adverbs, adjectives)
-get_jokes_adv(4, nouns, lst_3=adjectives, lst_2=adverbs, flag='yes')
+get_jokes_adv(4, nouns, lst_3=adjectives, lst_2=adverbs, is_unique='yes')
 get_jokes_adv(6, nouns, adverbs, adjectives, 'yes')

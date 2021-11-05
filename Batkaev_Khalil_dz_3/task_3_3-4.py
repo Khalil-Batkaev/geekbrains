@@ -3,10 +3,11 @@ def thesaurus(*args):
     names = {}
     args = sorted(args)
     for name in args:
-        if name[0] not in names:
-            names[name[0]] = [name]
+        first_char = name[0]
+        if first_char not in names:
+            names[first_char] = [name]
         else:
-            names[name[0]] += [name]
+            names[first_char] += [name]
     print(names)
 
 
@@ -24,10 +25,11 @@ def thesaurus_adv(*args):
         for full_name in args:
             first_name, last_name = full_name.split()
             if last_name.startswith(key):
-                if first_name[0] not in names:
-                    names[first_name[0]] = [full_name]
+                first_char = first_name[0]
+                if first_char not in names:
+                    names[first_char] = [full_name]
                 else:
-                    names[first_name[0]] += [full_name]
+                    names[first_char] += [full_name]
         full_names[key] = names
 
     print(full_names)
