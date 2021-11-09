@@ -12,7 +12,8 @@ def get_content_url(url):
 def currency_rates(url, currency):
     """Give the currency rate from marked url"""
     currencies = {}
-    currency_code, currency_rate = get_content_url(url).split('CharCode'), get_content_url(url).split('Value')
+    content = get_content_url(url)
+    currency_code, currency_rate = content.split('CharCode'), content.split('Value')
     for i in range(1, len(currency_code), 2):
         currencies[currency_code[i][1:4]] = float(currency_rate[i][1:8].replace(',', '.'))
     return currencies.get(currency.upper())
