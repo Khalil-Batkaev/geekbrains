@@ -16,7 +16,7 @@ def is_valid_logs(check_ip, check_command, check_path):
 
 def get_logs_from_file(file_to_read, is_only_ip='no'):
     """
-    Create the list with logs from the marked file
+    Give the elements from the marked file
     :param file_to_read: file with logs to edit
     :param is_only_ip: give only list with ip if 'yes'
     """
