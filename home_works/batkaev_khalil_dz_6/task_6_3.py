@@ -22,8 +22,10 @@ users = [name for name in get_data_from_file('task_3_users.csv', 'yes')]
 hobbies = [hobby for hobby in get_data_from_file('task_3_hobby.csv')]
 if len(users) > len(hobbies):
     hobbies_dict = dict(zip_longest(users, hobbies, fillvalue=None))
+    with open('task_3_rezult.txt', 'tw', encoding='utf-8') as f:
+        f.write(str(hobbies_dict))
 else:
     hobbies_dict = dict(zip(users, hobbies))
-
-with open('task_3_rezult.txt', 'tw', encoding='utf-8') as f:
-    f.write(str(hobbies_dict))
+    with open('task_3_rezult.txt', 'tw', encoding='utf-8') as f:
+        f.write(str(hobbies_dict))
+    exit(1)
