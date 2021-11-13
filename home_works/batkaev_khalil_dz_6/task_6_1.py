@@ -26,6 +26,8 @@ def get_logs_from_file(file_to_read, is_only_ip='no'):
                 ip, *text = line.split()
                 if len(text[4]) >= 1:
                     command = text[4][1:]
+                else:
+                    print(f'Ошибка в данных: не верный запрос в строке {line}')
                 path = text[5]
                 if is_valid_logs(ip, command, path):  # Проверка на соответсвие данных
                     yield ip, command, path
