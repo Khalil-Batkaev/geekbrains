@@ -9,14 +9,14 @@ else:
     with open('bakery_adv.csv', 'r+', encoding='utf-8') as f:
         if mark == 1:
             f.seek(0)
-            f.write(f"{sale_amount:<30} \n")
+            f.write(f"{sale_amount:<15} \n")
             exit(0)
         else:
             line = f.readline()
             while line:
                 id_line += 1
                 if mark - id_line == 1:
-                    f.seek(f.tell())
+                    f.seek(0, 1)
                     f.write(f"{sale_amount:<15} \n")
                     exit(0)
                 line = f.readline()
