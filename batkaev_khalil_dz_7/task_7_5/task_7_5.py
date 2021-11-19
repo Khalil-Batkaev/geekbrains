@@ -5,6 +5,8 @@ from json import dump
 dir_path = join('.', 'some_data_adv')
 result_dict = {}
 left_limit, right_limit, step, size_max = 0, 100, 10, 100000
+# Если не известен потенциально максимальный размер файлов
+# size_max = (stat(max(scandir(dir_path), key=lambda x: stat(x).st_size)).st_size) + 10000
 
 while right_limit <= size_max:
     ext_set = set()
