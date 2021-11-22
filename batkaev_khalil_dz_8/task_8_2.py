@@ -1,6 +1,5 @@
 import re
 
-# Возможно, шаблоны и широкие, но у нас же задача не валидация данных, а парсить строку с валидными однотипными данными)
 re_pattern = re.compile('''
                            ((?:(?:\d{1,3}\.){3}\d{1,3})|                # re_ip_v4
                            (?:(?:\w{3,4}:{1,2}){4,7}(?:\w{1,4})))|      # re_ip_v6
@@ -26,8 +25,3 @@ def parser_logs(file):
 
 logs = list(set(parser_logs('logs_from_gb.txt')))
 print(logs)
-
-# Для удобства проверки выходных данных
-
-# with open('logs.txt', 'w', encoding='utf-8') as f:
-#     f.write(str(logs))
