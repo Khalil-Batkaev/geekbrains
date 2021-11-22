@@ -15,9 +15,12 @@ def email_valid(func):
 
 @email_valid
 def email_parse(email):
+    re_name = r"(\w+(?:\.?\+?'?-?)\w+)@(\w+\.?-?\w+\.\w{2,})"
     email_dict = dict()
-    username, domain = re.split(r"@", email)  # или re.search(r"\w+(\.?\+?'?-?)\w+", email)[0], re.search(r"\w+\.?-?\w+\.\w{2,}", email)[0]
-    email_dict[username] = domain
+    match = re.findall(re_name, email)
+    username, domain = match[0][0], match[0][1]
+    email_dict['username'] = username
+    email_dict['domain'] = domain
     return email_dict
 
 
