@@ -1,13 +1,13 @@
 class Road():
+    __asphalt_mass = 25
+    __asphalt_thickness = 5
 
     def __init__(self, length, width):
-        self.asphalt_mass = 25
-        self.asphalt_thickness = 5
         self._length = length
         self._width = width
 
     def calc_asphalt_mass(self):
-        result_asphalt_mass = round(self._length * self._width * self.asphalt_mass / 1000 * self.asphalt_thickness)
+        result_asphalt_mass = round(self._length * self._width * self.__asphalt_mass / 1000 * self.__asphalt_thickness)
         return result_asphalt_mass
 
 

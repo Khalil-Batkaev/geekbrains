@@ -1,9 +1,9 @@
 class Worker():
 
-    def __init__(self, wage, bonus):
-        self.__name = 'Khalil'
-        self.__surname = 'Batkaev'
-        self.__position = 'Developer'
+    def __init__(self, name, surname, position, wage, bonus):
+        self.__name = name
+        self.__surname = surname
+        self.__position = position
         self._income = dict()
         self._income['wage'] = wage
         self._income['bonus'] = bonus
@@ -21,10 +21,11 @@ class Position(Worker):
         return self._income['wage'] + self._income['bonus']
 
 
-work_october = Position(50000, 30000)
-work_november = Position(50000, 40000)
-print(work_october._Worker__position)
-print(work_november._income)
-print(work_october.get_full_name())
-print(work_october.get_total_income())
-print(work_november.get_total_income())
+worker_khb = Position('Khalil', 'Batkaev', 'Developer', 50000, 40000)
+worker_rm = Position('Roman', 'Kosov', 'Manager', 30000, 20000)
+print(worker_khb._Worker__position)
+print(worker_rm._income)
+print(worker_khb.get_full_name())
+print(worker_khb.get_total_income())
+print(worker_rm.get_full_name())
+print(worker_rm.get_total_income())
