@@ -20,18 +20,20 @@ class Car():
 
 
 class TownCar(Car):
+    __speed_limit = 60
 
     def show_speed(self):
-        if self._speed <= 60:
+        if self._speed <= self.__speed_limit:
             print(f'Текущая скорость автомобиля {self._name} - {self._speed}')
         else:
             print(f'Автомобиль {self._name} превысил допустимую скорость!')
 
 
 class WorkCar(Car):
+    __speed_limit = 40
 
     def show_speed(self):
-        if self._speed <= 40:
+        if self._speed <= self.__speed_limit:
             print(f'Текущая скорость автомобиля {self._name} - {self._speed}')
         else:
             print(f'Автомобиль {self._name} превысил допустимую скорость!')
@@ -44,8 +46,7 @@ class SportCar(Car):
 class PoliceCar(Car):
 
     def __init__(self, speed, color, name):
-        super().__init__(speed, color, name)
-        self._is_police = True
+        super().__init__(speed, color, name, True)
 
 
 auto_1 = Car(60, 'красный', 'Ceed')

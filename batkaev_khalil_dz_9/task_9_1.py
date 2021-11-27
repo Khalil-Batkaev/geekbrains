@@ -2,25 +2,25 @@ from time import sleep
 from itertools import cycle
 
 
-class TrafficLight():
-    __color = None
+class TrafficLight:
+    __colors = ['red', 'yellow', 'green', 'yellow']
 
     def __init__(self, red_duration, yellow_duration, green_duration):
-        self.colors = dict()
-        self.colors['red'] = red_duration
-        self.colors['yellow'] = yellow_duration
-        self.colors['green'] = green_duration
+        self.__color = None
+        self.colors_dur = dict()
+        self.colors_dur['red'] = red_duration
+        self.colors_dur['yellow'] = yellow_duration
+        self.colors_dur['green'] = green_duration
 
     def state(self):
         print(self.__color)
 
     def running(self):
-        colors = ['red', 'yellow', 'green', 'yellow']
         try:
-            for color in cycle(colors):
+            for color in cycle(self.__colors):
                 self.__color = color
                 self.state()
-                sleep(self.colors[color])
+                sleep(self.colors_dur[color])
         except KeyboardInterrupt:
             print(f'Светофор выключен инспектором. Текущий цвет - {color}.')
 
