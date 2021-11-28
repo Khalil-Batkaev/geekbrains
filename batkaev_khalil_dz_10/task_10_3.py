@@ -41,10 +41,10 @@ cell_3 = cell_1 + cell_2
 cell_4 = cell_2 - cell_1
 cell_5 = cell_1 * cell_2
 cell_6 = cell_2 // cell_1
-print(cell_3, cell_4, cell_5, cell_6, sep='\n')
-print(cell_3.make_order(5))
-print(cell_5.make_order(15))
-
+print(cell_3, cell_3.make_order(5))
+print(cell_4, cell_4.make_order(2))
+print(cell_5, cell_5.make_order(15))
+print(cell_6, cell_6.make_order(2))
 try:
     cell_4 = cell_1 - cell_2
 except ValueError as e:

@@ -3,8 +3,9 @@ from abc import ABC, abstractmethod
 
 class Clothes(ABC):
 
-    def __init__(self, size):
+    def __init__(self, size, name=None):
         self.__size = size
+        self.name = name
         self.__reserved_fabric = []
 
     def __str__(self):
@@ -44,8 +45,8 @@ class Costume(Clothes):
         return self.__result
 
 
-coat_1, coat_2, coat_3 = Coat(48), Coat(56), Coat(62)
-costume_1, costume_2, costume_3 = Costume(188), Costume(176), Costume(180)
+coat_1, coat_2, coat_3 = Coat(48), Coat(56, 'Элегант'), Coat(62)
+costume_1, costume_2, costume_3 = Costume(188, 'Мажор'), Costume(176), Costume(180)
 
 print(coat_1.fabric_calculation, coat_2.fabric_calculation, coat_3.fabric_calculation, sep='\n')
 print()
@@ -54,3 +55,5 @@ print()
 total_fabric_for_coats = coat_1 + coat_2 + coat_3
 total_fabric_for_costumes = costume_1 + costume_2 + costume_3
 print(total_fabric_for_coats, total_fabric_for_costumes, sep='\n')
+print()
+print(coat_2.name, costume_1.name, sep='\n')
