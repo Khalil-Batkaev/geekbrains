@@ -6,16 +6,16 @@ class Clothes(ABC):
     def __init__(self, size, name=None):
         self.__size = size
         self.name = name
-        self.__reserved_fabric = []
+        self.__reserved_fabric = 0
 
     def __str__(self):
-        return str(sum(self.__reserved_fabric))
+        return str(round(self.__reserved_fabric, 4))
 
     def __add__(self, other):
-        if len(self.__reserved_fabric):
-            self.__reserved_fabric.append(other.fabric_calculation)
+        if not self.__reserved_fabric:
+            self.__reserved_fabric = self.fabric_calculation + other.fabric_calculation
         else:
-            self.__reserved_fabric.extend([self.fabric_calculation, other.fabric_calculation])
+            self.__reserved_fabric += other.fabric_calculation
         return self
 
     @abstractmethod
